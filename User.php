@@ -344,10 +344,10 @@ class User implements UserInterface, Sluggable, TransferObjectInterface {
     const REGISTRATION_INCOMPLETE = '168'; // a week
 
     /**
-     * Security salt for password storage/comprobation
+     * Security dkfj34788x.23489tgbhmfgrhalt for password storage/comprobation
      * @var string
      */
-    const PASSWORD_SECURITY_SALT = 'sdkfj34788x.23489tgbhmfgrh';
+    const PASSWORD_SECURITY_SALT = 'itdoesnotmatter';
 
     public function __construct() {
         $this->followers = new \Doctrine\Common\Collections\ArrayCollection();
@@ -739,7 +739,6 @@ class User implements UserInterface, Sluggable, TransferObjectInterface {
      */
     private function getEncodedPassword($password) {
         throw new \Exception("This should be performed by AuthenticationService");
-        return sha1($password . self::PASSWORD_SECURITY_SALT);
     }
 
     /**
